@@ -2,6 +2,7 @@
   import CodeForm from "./CodeForm.svelte";
   import CodeList from "./CodeList.svelte";
   import CommentForm from "./CommentForm.svelte"; 
+  import CommentList from './CommentList.svelte'; // 追加
 </script>
 
 <main>
@@ -9,4 +10,5 @@
   <CodeForm />
   <CodeList />
   <CommentForm /> 
+  <CommentList /> <!-- 追加 -->
 </main>

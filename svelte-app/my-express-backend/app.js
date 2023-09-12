@@ -50,6 +50,31 @@ app.get("/api/code", (req, res) => {
   );
 });
 
+// 新しく追加するコメント投稿API
+app.post("/api/comments", (req, res) => {
+  const { code_review_id, comment } = req.body;
+  if (!code_review_id || !comment) {
+    return res.status(400).send("Code review ID and comment are required");
+  }
+
+  const sql = "INSERT INTO comments (code_review_id, comment) VALUES (?, ?)";
+  db.run(sql, [code_review_id, comment], function (err) {
+    if (err) {
+      return res.status(500).send(err.message);
+    }
+    res.send({ id: this.lastID });
+  });
+});
+
+app.get("/api/comments", (req, res) => {
+  db.all("SELECT * FROM comments ORDER BY created_at DESC", [], (err, rows) => {
+    if (err) {
+      return res.status(500).json({ error: err.message });
+    }
+    res.json(rows);
+  });
+});
+
 // サーバー起動
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}/`);
