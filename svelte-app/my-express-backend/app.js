@@ -1,7 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const sqlite3 = require("sqlite3").verbose();
-const cors = require("cors"); // 追加
+const cors = require("cors");
 const app = express();
 const port = 3000;
 
@@ -14,7 +14,6 @@ app.use(bodyParser.json());
 // SQLiteの設定
 let db = new sqlite3.Database("./mydb.sqlite3");
 
-// 既存のHello Worldエンドポイント
 app.get("/", (req, res) => {
   res.send("Hello, World!");
 });
@@ -35,7 +34,6 @@ app.post("/api/code", (req, res) => {
   });
 });
 
-// すでにあるコード
 // 修正後のコード
 app.get("/api/code", (req, res) => {
   db.all(
