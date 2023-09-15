@@ -21,3 +21,21 @@
 <h2>コメントを投稿</h2>
 <textarea bind:value={comment}></textarea>
 <button on:click={submitComment}>コメントを送信</button>
+
+<style>
+  textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    max-width: 500px;
+  }
+  button {
+    padding: 0.5rem 1rem;
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 4px;
+  }
+</style>

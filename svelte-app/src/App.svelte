@@ -12,3 +12,17 @@
   <CommentForm /> 
   <CommentList /> <!-- 追加 -->
 </main>
+
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+  }
+</style>

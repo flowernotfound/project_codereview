@@ -19,3 +19,20 @@
   <textarea bind:value={code} placeholder="Enter your code here..."></textarea>
   <button on:click={submitCode}>Submit Code</button>
 </div>
+
+<style>
+  textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  button {
+    padding: 0.5rem 1rem;
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 4px;
+  }
+</style>

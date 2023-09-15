@@ -16,3 +16,17 @@
     </div>
   {/each}
 </div>
+
+<style>
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  li {
+    padding: 1rem;
+    margin: 0.5rem 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+</style>
